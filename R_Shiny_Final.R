@@ -159,12 +159,11 @@ server <- function(input, output) {
   
   # Petal Length Density Distribution
   output$plot2 = renderPlot({
-    my_dens <- ggplot(iris, aes(x=Petal.Length, colour=Species, fill=Species)) +
+      ggplot(iris, aes(x=Petal.Length, colour=Species, fill=Species)) +
       geom_density(alpha=.3) +
       geom_vline(aes(xintercept=mean(Petal.Length),  colour=Species),linetype="dashed",color="black")+
       xlab("Petal Length (cm)") +  
       ylab("Density")
-    print(my_dens)
   })
   
   # Petal Width Density Distribution
